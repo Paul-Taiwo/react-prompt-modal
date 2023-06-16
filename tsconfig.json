@@ -11,6 +11,7 @@
     "isolatedModules": false,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
     "baseUrl": "./src"
   },
   "include": ["src"],
