@@ -1,4 +1,4 @@
-import React, { ComponentType, ReactElement } from "react";
+import { ComponentType, ReactElement, createElement } from "react";
 import { createRoot, Root } from "react-dom/client";
 import PropTypes from "prop-types";
 
@@ -60,7 +60,7 @@ const createModal = ({
       ...others,
     };
 
-    const modalComponent: ReactElement = <Component {...props} />;
+    const modalComponent: ReactElement = createElement(Component, props);
 
     if (modalRoot) {
       modalRoot.render(modalComponent);
