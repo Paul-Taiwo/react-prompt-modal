@@ -3,7 +3,6 @@
     "target": "esnext",
     "module": "ESNext",
     "declaration": true,
-    "outDir": "./lib",
     "strict": true,
     "downlevelIteration": true,
     "moduleResolution": "node",
@@ -11,6 +10,7 @@
     "isolatedModules": false,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
     "baseUrl": "./src"
   },
   "include": ["src"],
