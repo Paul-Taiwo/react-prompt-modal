@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "flush": "rm -rf dist",
-    "test": "jest --config ./jest.config.json",
+    "test": "jest --config ./jest.config.json --env=jsdom",
     "build": "npm run flush && rollup -c",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
@@ -59,6 +59,7 @@
     "eslint": "^8.42.0",
     "eslint-plugin-react": "^7.32.2",
     "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
     "rollup": "^2.79.1",

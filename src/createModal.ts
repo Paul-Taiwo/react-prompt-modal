@@ -1,6 +1,5 @@
 import { ComponentType, ReactElement, createElement } from "react";
 import { createRoot, Root } from "react-dom/client";
-import PropTypes from "prop-types";
 
 interface ModalProps {
   show: boolean;
@@ -86,11 +85,6 @@ const createModal = ({
       renderModal();
     },
   };
-};
-
-createModal.propTypes = {
-  component: PropTypes.elementType.isRequired,
-  proceed: PropTypes.func,
 };
 
 export default createModal;
