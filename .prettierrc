@@ -4,5 +4,6 @@
   "singleQuote": false,
   "arrowParens": "always",
   "endOfLine": "lf",
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "proseWrap": "always"
 }
