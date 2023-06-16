@@ -3,7 +3,6 @@
     "target": "esnext",
     "module": "ESNext",
     "declaration": true,
-    "outDir": "./lib",
     "strict": true,
     "downlevelIteration": true,
     "moduleResolution": "node",
