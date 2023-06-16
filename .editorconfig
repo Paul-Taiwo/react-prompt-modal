@@ -1,0 +1,35 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+
+# Top-most EditorConfig file
+root = true
+
+# Default file encoding
+[*]
+charset = utf-8
+
+# Indentation settings
+[*.js]
+indent_style = space
+indent_size = 2
+
+[*.ts]
+indent_style = space
+indent_size = 2
+
+# Newline preferences
+insert_final_newline = true
+end_of_line = lf
+
+# Trim trailing whitespaces
+trim_trailing_whitespace = true
+
+# Enforce consistent line endings
+[*.md]
+end_of_line = lf
+
+# Ignore minified JavaScript files
+[**.min.js]
+indent_style = ignore
+insert_final_newline = ignore
+trim_trailing_whitespace = ignore
