@@ -1,5 +1,7 @@
 # React Prompt Modal
 
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/Paul-Taiwo/react-prompt-modal/test.yml?branch=main) ![Codecov branch](https://img.shields.io/codecov/c/github/Paul-Taiwo/react-prompt-modal/main?token=AyCugoDQmt) ![NPM](https://img.shields.io/npm/l/react-prompt-modal)
+
 ## Features
 
 - Display prompt modals with custom content and options.
