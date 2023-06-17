@@ -1,8 +1,9 @@
 import typescript from "rollup-plugin-typescript2";
+import * as path from "path";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
+import { babel } from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
-
 import pkg from "./package.json";
 
 const moduleName = pkg.name.replace(/^@.*\//, "");
@@ -22,11 +23,25 @@ const banner = `
    * @version v${pkg.version}
    * @author  ${author}
    * @license Released under the ${pkg.license} license.
-   * @copyright Paul Taiwo 2023
+   * @copyright Paul Taiwo Adedokun 2023
    */
 `;
 
-const commonPlugins = [resolve(), commonjs(), typescript({ tsconfig: "./tsconfig.json" })];
+const commonPlugins = [
+  resolve(),
+  commonjs(),
+  babel({
+    babelHelpers: "runtime",
+    configFile: path.resolve(__dirname, ".babelrc.js"),
+    extensions: [".ts", ".tsx"],
+    exclude: "node_modules/**",
+    skipPreflightCheck: true,
+    include: [/\/node_modules\/@babel\/runtime\//],
+  }),
+  typescript({
+    tsconfig: "./tsconfig.json",
+  }),
+];
 
 const pluginsSetups = (bundle) => ({
   external: ["react", "react-dom"],
