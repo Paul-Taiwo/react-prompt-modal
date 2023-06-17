@@ -10,6 +10,11 @@
     "modal",
     "helper",
     "component",
+    "react modal",
+    "prompt modal",
+    "modal dialog",
+    "modal prompt",
+    "modal utility",
     "paul-taiwo"
   ],
   "scripts": {
@@ -17,7 +22,7 @@
     "test": "jest --config ./jest.config.json --env=jsdom --coverage",
     "build": "npm run flush && rollup -c",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
+    "lint": "eslint . --ext .ts",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
