@@ -26,7 +26,7 @@ Import the `createModal` function from the package and use it to create modal in
 
 ```jsx
 import React from "react";
-import createModal from "react-prompt-modal";
+import { createModal } from "react-prompt-modal";
 
 // Define your custom component to be used as the modal content
 const CustomModalContent = ({ close }) => {
@@ -84,7 +84,7 @@ The `createModal` function returns an object with the following methods:
 
 ```jsx
 import React from "react";
-import createModal from "react-prompt-modal";
+import { createModal } from "react-prompt-modal";
 
 const CustomModalContent = ({ close }) => {
   return (
@@ -115,7 +115,7 @@ export default App;
 
 ```jsx
 import React from "react";
-import createModal from "react-prompt-modal";
+import { createModal } from "react-prompt-modal";
 
 const CustomModalContent = ({ close, proceed }) => {
   return (
