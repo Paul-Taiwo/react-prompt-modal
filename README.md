@@ -161,4 +161,10 @@ export default App;
 
 This package is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
+## ⭐️ Please Star this Project
+
+If you find this project helpful or valuable, please consider giving it a star on [GitHub](https://github.com/Paul-Taiwo/react-prompt-modal). It's a great way to show your support and it helps the project gain visibility.
+
+Thank you! 🌟
+
 > GitHub [Paul Taiwo](https://github.com/paul-taiwo)
