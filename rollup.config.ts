@@ -48,6 +48,8 @@ const commonPlugins = [
     extensions: [".ts", ".tsx"],
     exclude: "node_modules/**",
     skipPreflightCheck: true,
+    compact: true,
+    minified: true,
   }),
   analyze({
     hideDeps: true,
