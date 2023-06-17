@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "flush": "rm -rf dist",
-    "test": "jest --config ./jest.config.json --env=jsdom",
+    "test": "jest --config ./jest.config.json --env=jsdom --coverage",
     "build": "npm run flush && rollup -c",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
