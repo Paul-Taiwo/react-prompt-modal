@@ -2,8 +2,10 @@ import typescript from "rollup-plugin-typescript2";
 import * as path from "path";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
+import analyze from "rollup-plugin-analyzer";
 import { babel } from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
+
 import pkg from "./package.json";
 
 const moduleName = pkg.name.replace(/^@.*\//, "");
@@ -30,16 +32,26 @@ const banner = `
 const commonPlugins = [
   resolve(),
   commonjs(),
+  typescript({
+    tsconfig: "./tsconfig.json",
+    tsconfigOverride: {
+      declaration: true,
+      emitDeclarationOnly: true,
+      outDir: `${bundles}`,
+      declarationDir: `${bundles}`,
+    },
+    exclude: ["node_modules", "dist"],
+  }),
   babel({
-    babelHelpers: "runtime",
+    babelHelpers: "bundled",
     configFile: path.resolve(__dirname, ".babelrc.js"),
     extensions: [".ts", ".tsx"],
     exclude: "node_modules/**",
     skipPreflightCheck: true,
-    include: [/\/node_modules\/@babel\/runtime\//],
   }),
-  typescript({
-    tsconfig: "./tsconfig.json",
+  analyze({
+    hideDeps: true,
+    summaryOnly: true,
   }),
 ];
 
