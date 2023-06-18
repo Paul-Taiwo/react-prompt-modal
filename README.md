@@ -1,4 +1,4 @@
-# React Prompt Modal
+# React.js Prompt Modal
 
 ![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/Paul-Taiwo/react-prompt-modal/test.yml?branch=main) ![Codecov branch](https://img.shields.io/codecov/c/github/Paul-Taiwo/react-prompt-modal/main?token=AyCugoDQmt) ![NPM](https://img.shields.io/npm/l/react-prompt-modal)
 
@@ -157,7 +157,9 @@ export default App;
 
 You can find examples of how to use the `react-prompt-modal` package in the CodeSandbox demo:
 
-[React Prompt Modal CodeSandbox Bootstrap Examples](https://codesandbox.io/embed/react-prompt-modal-bootstrap-example-grh8pl?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark&view=preview)
+[React Prompt Modal CodeSandbox Bootstrap Examples](https://codesandbox.io/embed/react-prompt-modal-bootstrap-example-grh8pl?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark)
+
+[React Prompt Modal CodeSandbox Chakra UI Examples](https://codesandbox.io/embed/serene-burnell-5h8s7h?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark)
 
 ## Benefits
 
