@@ -18,6 +18,7 @@ interface CreateModalOptions {
 
 interface CreateModalReturn {
   open: () => void;
+  abort: () => void;
   close: () => void;
   setIsLoading: (loading: boolean) => void;
 }
@@ -43,10 +44,14 @@ const createModal = ({
     }
   };
 
-  const closeModal = (): void => {
+  const abort = (): void => {
     if (beforeClose && typeof beforeClose === "function") {
       beforeClose();
     }
+    unmount();
+  };
+
+  const closeModal = () => {
     unmount();
   };
 
@@ -54,6 +59,7 @@ const createModal = ({
     const props: ModalProps = {
       show: true,
       isLoading,
+      abort,
       close: closeModal,
       proceed,
       ...others,
@@ -79,6 +85,7 @@ const createModal = ({
 
   return {
     open,
+    abort,
     close: closeModal,
     setIsLoading: (loading: boolean): void => {
       isLoading = loading;
