@@ -14,7 +14,7 @@ jest.mock("react-dom/client");
 
 describe("createModal", () => {
   let mockComponent: jest.Mock;
-  let mockProps: { show: boolean; isLoading: boolean; close: jest.Mock };
+  let mockProps: { show: boolean; isLoading: boolean; close: jest.Mock; abort: jest.Mock };
   let mockRoot: MockedRoot;
 
   beforeEach(() => {
@@ -23,6 +23,7 @@ describe("createModal", () => {
       show: true,
       isLoading: false,
       close: jest.fn(),
+      abort: jest.fn(),
     };
     mockComponent.mockReturnValue(createElement("div", mockProps));
 
@@ -53,6 +54,7 @@ describe("createModal", () => {
     expect(mockRoot.render).toHaveBeenCalledWith(
       createElement(mockComponent, {
         close: expect.any(Function),
+        abort: expect.any(Function),
         isLoading: false,
         proceed: expect.any(Function),
         show: true,
@@ -74,6 +76,20 @@ describe("createModal", () => {
     expect(mockRoot.unmount).toHaveBeenCalled();
   });
 
+  it("should call beforeClose when abort is used to close the modal", () => {
+    const options = {
+      component: mockComponent,
+      beforeClose: jest.fn(),
+    };
+
+    const { open, abort } = createModal(options);
+    open();
+    abort();
+
+    expect(mockRoot.unmount).toHaveBeenCalled();
+    expect(options.beforeClose).toHaveBeenCalled();
+  });
+
   it("should set isLoading flag and render the modal", () => {
     const options = {
       component: mockComponent,
@@ -86,6 +102,7 @@ describe("createModal", () => {
     const updatedModalProps = {
       show: true,
       isLoading: true,
+      abort: expect.any(Function),
       close: expect.any(Function),
     };
 
