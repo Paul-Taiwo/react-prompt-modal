@@ -24,18 +24,23 @@ or using yarn:
 
 Import the `createModal` function from the package and use it to create modal instances:
 
+
 ```jsx
 import React from "react";
 import { createModal } from "react-prompt-modal";
+import PropTypes from "prop-types";
 
 // Define your custom component to be used as the modal content
-const CustomModalContent = ({ close }) => {
-  return (
-    <div>
-      <h2>Welcome to the Modal</h2>
-      <button onClick={close}>Close</button>
-    </div>
-  );
+const CustomModalContent = ({ show, isLoading, abort, close, proceed, ...others }) => {
+  // Your component code here
+};
+
+CustomModalContent.propTypes = {
+  show: PropTypes.bool,            // Indicates if the dialog is shown or not (from react-prompt-modal)
+  isLoading: PropTypes.bool,       // Indicates whether the modal is in a loading state (from react-prompt-modal)
+  abort: PropTypes.func,           // Function to abort and close the modal, triggering any before-close effects if specified (from react-prompt-modal)
+  close: PropTypes.func,           // Function to directly close the modal without any additional effects (from react-prompt-modal)
+  proceed: PropTypes.func,         // Function to handle the proceed action in the modal (from react-prompt-modal)
 };
 
 // Create a modal instance
