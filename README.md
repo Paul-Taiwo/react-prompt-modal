@@ -49,7 +49,7 @@ open();
 You can customize the behavior of the modal by providing additional options:
 
 ```jsx
-const { open, close, setIsLoading } = createModal({
+const { open, close, abort, setIsLoading } = createModal({
   component: CustomModalContent,
   proceed: () => {
     // Perform an action when the user clicks "Proceed"
@@ -75,7 +75,8 @@ The `createModal` function accepts the following options:
 The `createModal` function returns an object with the following methods:
 
 - `open()`: Opens the modal and displays it to the user.
-- `close()`: Closes the modal.
+- `abort()`: Cancels the modal action and closes the modal. If a `beforeClose` callback is provided, it will be executed before closing the modal.
+- `close()`: Closes the modal without any additional effects.
 - `setIsLoading(loading: boolean)`: Sets the loading state of the modal. Pass true to show a loading indicator, and false to hide it.
 
 ## Examples
@@ -117,12 +118,12 @@ export default App;
 import React from "react";
 import { createModal } from "react-prompt-modal";
 
-const CustomModalContent = ({ close, proceed }) => {
+const CustomModalContent = ({ abort, proceed }) => {
   return (
     <div>
       <h2>Are you sure you want to proceed?</h2>
       <button onClick={proceed}>Proceed</button>
-      <button onClick={close}>Cancel</button>
+      <button onClick={abort}>Cancel</button>
     </div>
   );
 };
@@ -148,6 +149,10 @@ const App = () => {
 
 export default App;
 ```
+
+You can find examples of how to use the `react-prompt-modal` package in the CodeSandbox demo:
+
+[React Prompt Modal CodeSandbox Bootstrap Examples](https://codesandbox.io/embed/react-prompt-modal-bootstrap-example-grh8pl?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark&view=preview)
 
 ## Benefits
 
