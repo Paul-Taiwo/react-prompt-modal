@@ -1,6 +1,8 @@
 # React.js Prompt Modal
 
-![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/Paul-Taiwo/react-prompt-modal/test.yml?branch=main) ![Codecov branch](https://img.shields.io/codecov/c/github/Paul-Taiwo/react-prompt-modal/main?token=AyCugoDQmt) ![NPM](https://img.shields.io/npm/l/react-prompt-modal)
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/Paul-Taiwo/react-prompt-modal/test.yml?branch=main)
+![Codecov branch](https://img.shields.io/codecov/c/github/Paul-Taiwo/react-prompt-modal/main?token=AyCugoDQmt)
+![NPM](https://img.shields.io/npm/l/react-prompt-modal)
 
 ## Features
 
@@ -14,16 +16,15 @@
 
 Install the package using npm:
 
-```npm install react-prompt-modal```
+`npm install react-prompt-modal`
 
 or using yarn:
 
-```yarn add react-prompt-modal```
+`yarn add react-prompt-modal`
 
 ## Usage
 
 Import the `createModal` function from the package and use it to create modal instances:
-
 
 ```jsx
 import React from "react";
@@ -36,11 +37,11 @@ const CustomModalContent = ({ show, isLoading, abort, close, proceed, ...others 
 };
 
 CustomModalContent.propTypes = {
-  show: PropTypes.bool,            // Indicates if the dialog is shown or not (from react-prompt-modal)
-  isLoading: PropTypes.bool,       // Indicates whether the modal is in a loading state (from react-prompt-modal)
-  abort: PropTypes.func,           // Function to abort and close the modal, triggering any before-close effects if specified (from react-prompt-modal)
-  close: PropTypes.func,           // Function to directly close the modal without any additional effects (from react-prompt-modal)
-  proceed: PropTypes.func,         // Function to handle the proceed action in the modal (from react-prompt-modal)
+  show: PropTypes.bool, // Indicates if the dialog is shown or not (from react-prompt-modal)
+  isLoading: PropTypes.bool, // Indicates whether the modal is in a loading state (from react-prompt-modal)
+  abort: PropTypes.func, // Function to abort and close the modal, triggering any before-close effects if specified (from react-prompt-modal)
+  close: PropTypes.func, // Function to directly close the modal without any additional effects (from react-prompt-modal)
+  proceed: PropTypes.func, // Function to handle the proceed action in the modal (from react-prompt-modal)
 };
 
 // Create a modal instance
@@ -51,6 +52,7 @@ const { open, close } = createModal({
 // Trigger the modal
 open();
 ```
+
 You can customize the behavior of the modal by providing additional options:
 
 ```jsx
@@ -80,9 +82,11 @@ The `createModal` function accepts the following options:
 The `createModal` function returns an object with the following methods:
 
 - `open()`: Opens the modal and displays it to the user.
-- `abort()`: Cancels the modal action and closes the modal. If a `beforeClose` callback is provided, it will be executed before closing the modal.
+- `abort()`: Cancels the modal action and closes the modal. If a `beforeClose` callback is provided, it will be executed
+  before closing the modal.
 - `close()`: Closes the modal without any additional effects.
-- `setIsLoading(loading: boolean)`: Sets the loading state of the modal. Pass true to show a loading indicator, and false to hide it.
+- `setIsLoading(loading: boolean)`: Sets the loading state of the modal. Pass true to show a loading indicator, and
+  false to hide it.
 
 ## Examples
 
@@ -161,13 +165,20 @@ You can find examples of how to use the `react-prompt-modal` package in the Code
 
 [React Prompt Modal CodeSandbox Chakra UI Examples](https://codesandbox.io/embed/serene-burnell-5h8s7h?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&theme=dark)
 
+[React Prompt Modal CodeSandbox Tailwind CSS Examples](https://codesandbox.io/p/sandbox/react-prompt-modal-tailwind-css-example-xnj9mf?file=%2Fsrc%2FApp.js%3A1%2C1)
+
 ## Benefits
 
-- `Simplicity`: React Prompt Modal is designed to be easy to use and integrate into your React applications. It provides a straightforward API for creating and customizing modal dialogs.
-- `Flexibility`: The package allows you to create modals with custom content and options tailored to your application's specific needs. You have full control over the modal's behavior and appearance.
-- `Lightweight`: React Prompt Modal is a lightweight package with no external dependencies. It won't bloat your project and ensures fast and efficient performance.
-- `Customizable Styling`: You can easily customize the styling of the modal component to match your application's design. Apply your own CSS classes or use a CSS-in-JS solution like styled-components.
-- `Loading State`: React Prompt Modal supports a loading state, allowing you to indicate progress or data fetching to the user while the modal is open.
+- `Simplicity`: React Prompt Modal is designed to be easy to use and integrate into your React applications. It provides
+  a straightforward API for creating and customizing modal dialogs.
+- `Flexibility`: The package allows you to create modals with custom content and options tailored to your application's
+  specific needs. You have full control over the modal's behavior and appearance.
+- `Lightweight`: React Prompt Modal is a lightweight package with no external dependencies. It won't bloat your project
+  and ensures fast and efficient performance.
+- `Customizable Styling`: You can easily customize the styling of the modal component to match your application's
+  design. Apply your own CSS classes or use a CSS-in-JS solution like styled-components.
+- `Loading State`: React Prompt Modal supports a loading state, allowing you to indicate progress or data fetching to
+  the user while the modal is open.
 
 ## License
 
@@ -175,7 +186,9 @@ This package is licensed under the [MIT License](https://opensource.org/licenses
 
 ## ⭐️ Please Star this Project
 
-If you find this project helpful or valuable, please consider giving it a star on [GitHub](https://github.com/Paul-Taiwo/react-prompt-modal). It's a great way to show your support and it helps the project gain visibility.
+If you find this project helpful or valuable, please consider giving it a star on
+[GitHub](https://github.com/Paul-Taiwo/react-prompt-modal). It's a great way to show your support and it helps the
+project gain visibility.
 
 Thank you! 🌟
 
