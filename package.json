@@ -1,6 +1,6 @@
 {
   "name": "react-prompt-modal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A lightweight helper library for creating and managing modals in React applications.",
   "main": "dist/bundle-cjs/index.js",
   "module": "dist/bundle-es/index.js",
